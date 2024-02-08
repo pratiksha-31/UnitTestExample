@@ -1,0 +1,40 @@
+package com.lcwd.test.Services;
+
+import org.junit.*;
+
+public class CalculatorServiceTest {
+    @BeforeClass
+    public static void init()
+    {
+        System.out.println("before all test cases:");
+    }
+    @Before
+    public  void beforeEach()
+    {
+        System.out.println("before each test case");
+    }
+    //test method of addTwoNumbers
+    @Test
+    public void addTwoNumbers()
+    {
+        System.out.println(" test for add two numbers");
+        int result= CalculatorService.addTwoNumbers(12 , 45);
+        int expected=57;
+        Assert.assertEquals(expected,result);
+
+    }
+   @Test
+    public void sumAnyNumberTest()
+    {
+        System.out.println(" test for add any numbers");
+        int result= CalculatorService.sumAnyNumbers(1,2,3,4);
+        int expected=10;
+        Assert.assertEquals(expected,result);
+    }
+    @AfterClass
+    public  static void cleanup()
+    {
+        System.out.println("after test cases:");
+    }
+}
+
